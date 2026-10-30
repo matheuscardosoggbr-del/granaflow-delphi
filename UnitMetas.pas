@@ -33,7 +33,7 @@ var
   Grid: TDBGrid;
   Navigator: TDBNavigator;
 begin
-  inherited Create(AOwner);
+  inherited CreateNew(AOwner);
   Caption := 'GranaFlow - Metas';
   Width := 950;
   Height := 520;

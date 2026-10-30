@@ -33,7 +33,7 @@ var
   Grid: TDBGrid;
   Navigator: TDBNavigator;
 begin
-  inherited Create(AOwner);
+  inherited CreateNew(AOwner);
   Caption := 'GranaFlow - Gastos recorrentes';
   Width := 850;
   Height := 520;

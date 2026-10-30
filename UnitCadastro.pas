@@ -26,7 +26,7 @@ var
   Titulo, LNome, LEmail, LSenha: TLabel;
   BCadastrar: TButton;
 begin
-  inherited Create(AOwner);
+  inherited CreateNew(AOwner);
   Caption := 'GranaFlow - Criar conta';
   Width := 380;
   Height := 330;

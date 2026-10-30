@@ -29,7 +29,7 @@ var
   Titulo, L1, L2, L3, L4: TLabel;
   BAtualizar: TButton;
 begin
-  inherited Create(AOwner);
+  inherited CreateNew(AOwner);
 
   Caption := 'GranaFlow - Painel';
   Width := 760;

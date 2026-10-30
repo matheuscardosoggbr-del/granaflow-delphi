@@ -26,7 +26,7 @@ var
   Titulo: TLabel;
   BAtualizar: TButton;
 begin
-  inherited Create(AOwner);
+  inherited CreateNew(AOwner);
   Caption := 'GranaFlow - Relatórios';
   Width := 600;
   Height := 420;

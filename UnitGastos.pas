@@ -38,7 +38,7 @@ var
   Titulo, LDescricao, LValor, LData, LCategoria: TLabel;
   BNovo, BSalvar, BExcluir: TButton;
 begin
-  inherited Create(AOwner);
+  inherited CreateNew(AOwner);
 
   Caption := 'GranaFlow - Gastos';
   Width := 850;

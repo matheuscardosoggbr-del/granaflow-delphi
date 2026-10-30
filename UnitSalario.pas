@@ -27,7 +27,7 @@ var
   Titulo, LValor: TLabel;
   BSalvar: TButton;
 begin
-  inherited Create(AOwner);
+  inherited CreateNew(AOwner);
   Caption := 'GranaFlow - Salário';
   Width := 420;
   Height := 230;
