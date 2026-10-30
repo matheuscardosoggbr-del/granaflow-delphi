@@ -11,7 +11,7 @@ uses
   UnitCategorias in 'UnitCategorias.pas' {FormCategorias},
   UnitMetas in 'UnitMetas.pas' {FormMetas},
   UnitRelatorios in 'UnitRelatorios.pas' {FormRelatorios},
-  UnitCadastro in 'UnitCadastro.pas',
+  UnitCadastro in 'UnitCadastro.pas' {FormCadastro},
   UnitSalario in 'UnitSalario.pas' {FormSalario},
   UnitRecorrentes in 'UnitRecorrentes.pas' {FormRecorrentes},
   UnitGuardado in 'UnitGuardado.pas' {FormGuardado};
