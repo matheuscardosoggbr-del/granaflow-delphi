@@ -4,8 +4,9 @@ interface
 
 uses
   System.SysUtils, System.Classes, Vcl.Forms, Vcl.Controls, Vcl.StdCtrls,
-  Vcl.Graphics,
-  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.DBGrids, Data.DB, UnitDMDB;
+  Vcl.Graphics, Vcl.Dialogs,
+  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.DBGrids, Data.DB,
+  FireDAC.Comp.Client, FireDAC.Stan.Param, UnitDMDB;
 
 type
   TFormGastos = class(TForm)
@@ -13,14 +14,18 @@ type
     FDescricao: TDBEdit;
     FValor: TDBEdit;
     FData: TDBEdit;
+    FCategoria: TComboBox;
+    FCategoriaIds: TStringList;
     FGrid: TDBGrid;
     FNavigator: TDBNavigator;
     procedure NovoGasto(Sender: TObject);
     procedure SalvarGasto(Sender: TObject);
     procedure ExcluirGasto(Sender: TObject);
     procedure PrepararNovoGasto;
+    procedure CarregarCategorias;
   public
     constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
   end;
 
 var
@@ -30,7 +35,7 @@ implementation
 
 constructor TFormGastos.Create(AOwner: TComponent);
 var
-  Titulo, LDescricao, LValor, LData: TLabel;
+  Titulo, LDescricao, LValor, LData, LCategoria: TLabel;
   BNovo, BSalvar, BExcluir: TButton;
 begin
   inherited Create(AOwner);
@@ -90,6 +95,16 @@ begin
   FData.DataSource := DMDB.DsGastos;
   FData.DataField := 'data_gasto';
 
+  LCategoria := TLabel.Create(Self);
+  LCategoria.Parent := Self;
+  LCategoria.SetBounds(560, 58, 120, 20);
+  LCategoria.Caption := 'Categoria';
+  FCategoria := TComboBox.Create(Self);
+  FCategoria.Parent := Self;
+  FCategoria.SetBounds(560, 78, 180, 24);
+  FCategoria.Style := csDropDownList;
+  FCategoriaIds := TStringList.Create;
+
   BNovo := TButton.Create(Self);
   BNovo.Parent := Self;
   BNovo.Left := 560;
@@ -132,6 +147,13 @@ begin
   FGrid.DataSource := DMDB.DsGastos;
 
   PrepararNovoGasto;
+  CarregarCategorias;
+end;
+
+destructor TFormGastos.Destroy;
+begin
+  FCategoriaIds.Free;
+  inherited Destroy;
 end;
 
 procedure TFormGastos.PrepararNovoGasto;
@@ -144,8 +166,38 @@ procedure TFormGastos.NovoGasto(Sender: TObject);
 begin
   DMDB.TbGastos.Append;
   DMDB.TbGastos.FieldByName('id_usuario').AsInteger := UsuarioLogadoId;
-  DMDB.TbGastos.FieldByName('id_categoria').AsInteger := 1;
+  if FCategoria.ItemIndex >= 0 then
+    DMDB.TbGastos.FieldByName('id_categoria').AsInteger :=
+      StrToInt(FCategoriaIds[FCategoria.ItemIndex]);
   DMDB.TbGastos.FieldByName('data_gasto').AsDateTime := Date;
+end;
+
+procedure TFormGastos.CarregarCategorias;
+var
+  Consulta: TFDQuery;
+begin
+  FCategoria.Items.Clear;
+  FCategoriaIds.Clear;
+  Consulta := TFDQuery.Create(nil);
+  try
+    Consulta.Connection := DMDB.DB;
+    Consulta.SQL.Text :=
+      'SELECT id_categoria, nome FROM categorias ' +
+      'WHERE id_usuario IS NULL OR id_usuario = :id_usuario ' +
+      'ORDER BY nome';
+    Consulta.ParamByName('id_usuario').AsInteger := UsuarioLogadoId;
+    Consulta.Open;
+    while not Consulta.Eof do
+    begin
+      FCategoria.Items.Add(Consulta.FieldByName('nome').AsString);
+      FCategoriaIds.Add(Consulta.FieldByName('id_categoria').AsString);
+      Consulta.Next;
+    end;
+  finally
+    Consulta.Free;
+  end;
+  if FCategoria.Items.Count > 0 then
+    FCategoria.ItemIndex := 0;
 end;
 
 procedure TFormGastos.SalvarGasto(Sender: TObject);
