@@ -84,7 +84,6 @@ function TFormPainel.BuscarTotal(const NomeTabela: string): Currency;
 var
   Consulta: TFDQuery;
 begin
-  Result := 0;
   Consulta := TFDQuery.Create(nil);
   try
     Consulta.Connection := DMDB.DB;
