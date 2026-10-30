@@ -5,16 +5,16 @@ uses
   UnitDMDB in 'UnitDMDB.pas' {DMDB: TDataModule},
   UnitPrincipal in 'UnitPrincipal.pas' {Principal},
   UnitLogin in 'UnitLogin.pas' {Login},
-  UnitGastos in 'UnitGastos.pas' {FormGastos},
-  UnitReceitas in 'UnitReceitas.pas' {FormReceitas},
-  UnitPainel in 'UnitPainel.pas' {FormPainel},
-  UnitCategorias in 'UnitCategorias.pas' {FormCategorias},
-  UnitMetas in 'UnitMetas.pas' {FormMetas},
-  UnitRelatorios in 'UnitRelatorios.pas' {FormRelatorios},
-  UnitCadastro in 'UnitCadastro.pas' {FormCadastro},
-  UnitSalario in 'UnitSalario.pas' {FormSalario},
-  UnitRecorrentes in 'UnitRecorrentes.pas' {FormRecorrentes},
-  UnitGuardado in 'UnitGuardado.pas' {FormGuardado};
+  UnitGastos in 'UnitGastos.pas',
+  UnitReceitas in 'UnitReceitas.pas',
+  UnitPainel in 'UnitPainel.pas',
+  UnitCategorias in 'UnitCategorias.pas',
+  UnitMetas in 'UnitMetas.pas',
+  UnitRelatorios in 'UnitRelatorios.pas',
+  UnitCadastro in 'UnitCadastro.pas',
+  UnitSalario in 'UnitSalario.pas',
+  UnitRecorrentes in 'UnitRecorrentes.pas',
+  UnitGuardado in 'UnitGuardado.pas';
 
 
 {$R *.res}
