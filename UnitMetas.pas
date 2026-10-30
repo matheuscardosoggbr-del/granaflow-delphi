@@ -74,6 +74,8 @@ end;
 
 procedure TFormMetas.SalvarMeta(Sender: TObject);
 begin
+  if FMetas.State in dsEditModes then
+    FMetas.FieldByName('id_usuario').AsInteger := UsuarioLogadoId;
   if FMetas.State in dsEditModes then FMetas.Post;
 end;
 

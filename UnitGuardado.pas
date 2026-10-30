@@ -67,6 +67,8 @@ end;
 
 procedure TFormGuardado.Salvar(Sender: TObject);
 begin
+  if FTabela.State in dsEditModes then
+    FTabela.FieldByName('id_usuario').AsInteger := UsuarioLogadoId;
   if FTabela.State in dsEditModes then FTabela.Post;
 end;
 

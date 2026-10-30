@@ -47,6 +47,10 @@ end;
 
 procedure TFormReceitas.SalvarReceita(Sender: TObject);
 begin
+  if UsuarioLogadoId <= 0 then
+  begin ShowMessage('Sessao de usuario invalida. Entre novamente.'); Exit; end;
+  if DMDB.TbReceita.State in dsEditModes then
+    DMDB.TbReceita.FieldByName('id_usuario').AsInteger := UsuarioLogadoId;
   if Trim(DMDB.TbReceita.FieldByName('descricao').AsString) = '' then
   begin ShowMessage('Informe uma descrição para a receita.'); Exit; end;
   if DMDB.TbReceita.FieldByName('valor').AsCurrency <= 0 then

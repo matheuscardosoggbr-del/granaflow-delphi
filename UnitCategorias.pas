@@ -65,6 +65,8 @@ end;
 
 procedure TFormCategorias.SalvarCategoria(Sender: TObject);
 begin
+  if FCategorias.State in dsEditModes then
+    FCategorias.FieldByName('id_usuario').AsInteger := UsuarioLogadoId;
   if FCategorias.State in dsEditModes then FCategorias.Post;
 end;
 

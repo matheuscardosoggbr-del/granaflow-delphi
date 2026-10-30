@@ -91,6 +91,10 @@ end;
 
 procedure TFormGastos.SalvarGasto(Sender: TObject);
 begin
+  if UsuarioLogadoId <= 0 then
+  begin ShowMessage('Sessao de usuario invalida. Entre novamente.'); Exit; end;
+  if DMDB.TbGastos.State in dsEditModes then
+    DMDB.TbGastos.FieldByName('id_usuario').AsInteger := UsuarioLogadoId;
   if Trim(DMDB.TbGastos.FieldByName('descricao').AsString) = '' then
   begin ShowMessage('Informe uma descrição para o gasto.'); Exit; end;
   if DMDB.TbGastos.FieldByName('valor').AsCurrency <= 0 then
