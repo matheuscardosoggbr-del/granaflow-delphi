@@ -6,7 +6,7 @@ uses
   UnitPrincipal in 'UnitPrincipal.pas' {Principal},
   UnitLogin in 'UnitLogin.pas' {Login},
   UnitGastos in 'UnitGastos.pas' {FormGastos},
-  UnitReceitas in 'UnitReceitas.pas',
+  UnitReceitas in 'UnitReceitas.pas' {FormReceitas},
   UnitPainel in 'UnitPainel.pas',
   UnitCategorias in 'UnitCategorias.pas',
   UnitMetas in 'UnitMetas.pas',
