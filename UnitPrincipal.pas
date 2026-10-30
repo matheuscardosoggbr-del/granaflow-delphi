@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXPanels, Vcl.ExtCtrls,
   Vcl.WinXCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Imaging.pngimage,
   UnitGastos, UnitReceitas, UnitPainel, UnitCategorias, UnitMetas, UnitRelatorios,
-  UnitSalario, UnitRecorrentes;
+  UnitSalario, UnitRecorrentes, UnitGuardado;
 
 type
   TPrincipal = class(TForm)
@@ -33,6 +33,7 @@ type
     BtnSair: TButton;
     BtnSalario: TButton;
     BtnRecorrentes: TButton;
+    BtnGuardado: TButton;
     procedure AbrirGastos(Sender: TObject);
     procedure AbrirReceitas(Sender: TObject);
     procedure AbrirPainel(Sender: TObject);
@@ -42,6 +43,7 @@ type
     procedure SairDoSistema(Sender: TObject);
     procedure AbrirSalario(Sender: TObject);
     procedure AbrirRecorrentes(Sender: TObject);
+    procedure AbrirGuardado(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -123,6 +125,13 @@ begin
   BtnRecorrentes.Height := 38;
   BtnRecorrentes.Caption := 'Gastos recorrentes';
   BtnRecorrentes.OnClick := AbrirRecorrentes;
+
+  BtnGuardado := TButton.Create(Self);
+  BtnGuardado.Parent := Panel2;
+  BtnGuardado.Align := alTop;
+  BtnGuardado.Height := 38;
+  BtnGuardado.Caption := 'Dinheiro guardado';
+  BtnGuardado.OnClick := AbrirGuardado;
 end;
 
 procedure TPrincipal.AbrirGastos(Sender: TObject);
@@ -185,6 +194,8 @@ begin
     FreeAndNil(FormSalario);
   if Assigned(FormRecorrentes) then
     FreeAndNil(FormRecorrentes);
+  if Assigned(FormGuardado) then
+    FreeAndNil(FormGuardado);
 
   UsuarioLogadoId := 0;
   Hide;
@@ -205,6 +216,13 @@ begin
   if not Assigned(FormRecorrentes) then
     FormRecorrentes := TFormRecorrentes.Create(Application);
   FormRecorrentes.Show;
+end;
+
+procedure TPrincipal.AbrirGuardado(Sender: TObject);
+begin
+  if not Assigned(FormGuardado) then
+    FormGuardado := TFormGuardado.Create(Application);
+  FormGuardado.Show;
 end;
 
 end.
