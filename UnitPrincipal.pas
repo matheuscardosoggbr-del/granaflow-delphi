@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXPanels, Vcl.ExtCtrls,
   Vcl.WinXCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Imaging.pngimage,
-  UnitGastos, UnitReceitas, UnitPainel, UnitCategorias, UnitMetas;
+  UnitGastos, UnitReceitas, UnitPainel, UnitCategorias, UnitMetas, UnitRelatorios;
 
 type
   TPrincipal = class(TForm)
@@ -28,11 +28,13 @@ type
     BtnPainel: TButton;
     BtnCategorias: TButton;
     BtnMetas: TButton;
+    BtnRelatorios: TButton;
     procedure AbrirGastos(Sender: TObject);
     procedure AbrirReceitas(Sender: TObject);
     procedure AbrirPainel(Sender: TObject);
     procedure AbrirCategorias(Sender: TObject);
     procedure AbrirMetas(Sender: TObject);
+    procedure AbrirRelatorios(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -83,6 +85,13 @@ begin
   BtnMetas.Height := 38;
   BtnMetas.Caption := 'Metas';
   BtnMetas.OnClick := AbrirMetas;
+
+  BtnRelatorios := TButton.Create(Self);
+  BtnRelatorios.Parent := Panel2;
+  BtnRelatorios.Align := alTop;
+  BtnRelatorios.Height := 38;
+  BtnRelatorios.Caption := 'Relatórios';
+  BtnRelatorios.OnClick := AbrirRelatorios;
 end;
 
 procedure TPrincipal.AbrirGastos(Sender: TObject);
@@ -118,6 +127,13 @@ begin
   if not Assigned(FormMetas) then
     FormMetas := TFormMetas.Create(Application);
   FormMetas.Show;
+end;
+
+procedure TPrincipal.AbrirRelatorios(Sender: TObject);
+begin
+  if not Assigned(FormRelatorios) then
+    FormRelatorios := TFormRelatorios.Create(Application);
+  FormRelatorios.Show;
 end;
 
 end.

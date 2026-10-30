@@ -9,7 +9,8 @@ uses
   UnitReceitas in 'UnitReceitas.pas' {FormReceitas},
   UnitPainel in 'UnitPainel.pas' {FormPainel},
   UnitCategorias in 'UnitCategorias.pas' {FormCategorias},
-  UnitMetas in 'UnitMetas.pas' {FormMetas};
+  UnitMetas in 'UnitMetas.pas' {FormMetas},
+  UnitRelatorios in 'UnitRelatorios.pas' {FormRelatorios};
 
 
 {$R *.res}
