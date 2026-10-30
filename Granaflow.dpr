@@ -10,7 +10,8 @@ uses
   UnitPainel in 'UnitPainel.pas' {FormPainel},
   UnitCategorias in 'UnitCategorias.pas' {FormCategorias},
   UnitMetas in 'UnitMetas.pas' {FormMetas},
-  UnitRelatorios in 'UnitRelatorios.pas' {FormRelatorios};
+  UnitRelatorios in 'UnitRelatorios.pas' {FormRelatorios},
+  UnitCadastro in 'UnitCadastro.pas' {FormCadastro};
 
 
 {$R *.res}

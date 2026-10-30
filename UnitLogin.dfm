@@ -220,5 +220,14 @@ object Login: TLogin
       TabOrder = 2
       OnClick = BentrarClick
     end
+    object BCriarConta: TButton
+      Left = 48
+      Top = 270
+      Width = 225
+      Height = 25
+      Caption = 'Criar conta'
+      TabOrder = 3
+      OnClick = CriarConta
+    end
   end
 end
