@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXPanels, Vcl.ExtCtrls,
   Vcl.WinXCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Imaging.pngimage,
-  UnitGastos;
+  UnitGastos, UnitReceitas;
 
 type
   TPrincipal = class(TForm)
@@ -24,7 +24,9 @@ type
     LogoGranaflow: TLabel;
     ImgLogo: TImage;
     BtnGastos: TButton;
+    BtnReceitas: TButton;
     procedure AbrirGastos(Sender: TObject);
+    procedure AbrirReceitas(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -47,6 +49,13 @@ begin
   BtnGastos.Height := 38;
   BtnGastos.Caption := 'Gastos';
   BtnGastos.OnClick := AbrirGastos;
+
+  BtnReceitas := TButton.Create(Self);
+  BtnReceitas.Parent := Panel2;
+  BtnReceitas.Align := alTop;
+  BtnReceitas.Height := 38;
+  BtnReceitas.Caption := 'Receitas';
+  BtnReceitas.OnClick := AbrirReceitas;
 end;
 
 procedure TPrincipal.AbrirGastos(Sender: TObject);
@@ -54,6 +63,13 @@ begin
   if not Assigned(FormGastos) then
     FormGastos := TFormGastos.Create(Application);
   FormGastos.Show;
+end;
+
+procedure TPrincipal.AbrirReceitas(Sender: TObject);
+begin
+  if not Assigned(FormReceitas) then
+    FormReceitas := TFormReceitas.Create(Application);
+  FormReceitas.Show;
 end;
 
 end.
