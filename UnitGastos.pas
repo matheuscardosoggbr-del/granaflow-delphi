@@ -101,6 +101,11 @@ begin
   begin ShowMessage('Informe um valor maior que zero.'); Exit; end;
   if FCategoria.ItemIndex < 0 then
   begin ShowMessage('Escolha uma categoria.'); Exit; end;
+  if FCategoria.ItemIndex >= FCategoriaIds.Count then
+  begin ShowMessage('Escolha uma categoria valida.'); Exit; end;
+  if DMDB.TbGastos.State in dsEditModes then
+    DMDB.TbGastos.FieldByName('id_categoria').AsInteger :=
+      StrToInt(FCategoriaIds[FCategoria.ItemIndex]);
   if DMDB.TbGastos.State in dsEditModes then DMDB.TbGastos.Post;
 end;
 
