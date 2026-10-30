@@ -202,6 +202,24 @@ end;
 
 procedure TFormGastos.SalvarGasto(Sender: TObject);
 begin
+  if Trim(DMDB.TbGastos.FieldByName('descricao').AsString) = '' then
+  begin
+    ShowMessage('Informe uma descrição para o gasto.');
+    Exit;
+  end;
+
+  if DMDB.TbGastos.FieldByName('valor').AsCurrency <= 0 then
+  begin
+    ShowMessage('Informe um valor maior que zero.');
+    Exit;
+  end;
+
+  if FCategoria.ItemIndex < 0 then
+  begin
+    ShowMessage('Escolha uma categoria.');
+    Exit;
+  end;
+
   if DMDB.TbGastos.State in dsEditModes then
     DMDB.TbGastos.Post;
 end;

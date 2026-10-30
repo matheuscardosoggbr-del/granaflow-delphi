@@ -4,6 +4,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, Vcl.Forms, Vcl.Controls, Vcl.StdCtrls,
+  Vcl.Dialogs,
   Vcl.Graphics, Vcl.DBCtrls, Vcl.DBGrids, Data.DB, UnitDMDB;
 
 type
@@ -125,6 +126,18 @@ end;
 
 procedure TFormReceitas.SalvarReceita(Sender: TObject);
 begin
+  if Trim(DMDB.TbReceita.FieldByName('descricao').AsString) = '' then
+  begin
+    ShowMessage('Informe uma descrição para a receita.');
+    Exit;
+  end;
+
+  if DMDB.TbReceita.FieldByName('valor').AsCurrency <= 0 then
+  begin
+    ShowMessage('Informe um valor maior que zero.');
+    Exit;
+  end;
+
   if DMDB.TbReceita.State in dsEditModes then
     DMDB.TbReceita.Post;
 end;
