@@ -14,7 +14,7 @@ uses
   UnitCadastro in 'UnitCadastro.pas',
   UnitSalario in 'UnitSalario.pas' {FormSalario},
   UnitRecorrentes in 'UnitRecorrentes.pas',
-  UnitGuardado in 'UnitGuardado.pas';
+  UnitGuardado in 'UnitGuardado.pas' {FormGuardado};
 
 
 {$R *.res}
