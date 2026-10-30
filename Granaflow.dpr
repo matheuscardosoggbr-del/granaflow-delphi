@@ -8,7 +8,7 @@ uses
   UnitGastos in 'UnitGastos.pas' {FormGastos},
   UnitReceitas in 'UnitReceitas.pas' {FormReceitas},
   UnitPainel in 'UnitPainel.pas' {FormPainel},
-  UnitCategorias in 'UnitCategorias.pas',
+  UnitCategorias in 'UnitCategorias.pas' {FormCategorias},
   UnitMetas in 'UnitMetas.pas',
   UnitRelatorios in 'UnitRelatorios.pas',
   UnitCadastro in 'UnitCadastro.pas',
