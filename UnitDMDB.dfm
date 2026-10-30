@@ -140,6 +140,23 @@ object DMDB: TDMDB
     TableName = 'salarios'
     Left = 144
     Top = 16
+    object TbSalarioid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+    end
+    object TbSalarioid_usuario: TIntegerField
+      FieldName = 'id_usuario'
+      Origin = 'id_usuario'
+      Required = True
+    end
+    object TbSalariovalor: TBCDField
+      FieldName = 'valor'
+      Origin = 'valor'
+      Required = True
+      Precision = 10
+      Size = 2
+      EditMask = '#,##0.00;-,##0.00;_'
+    end
   end
   object DataSource4: TDataSource
     Left = 144
@@ -176,6 +193,46 @@ object DMDB: TDMDB
     TableName = 'receitas'
     Left = 280
     Top = 16
+    object TbReceitaid_receita: TFDAutoIncField
+      FieldName = 'id_receita'
+      Origin = 'id_receita'
+    end
+    object TbReceitaid_usuario: TIntegerField
+      FieldName = 'id_usuario'
+      Origin = 'id_usuario'
+      Required = True
+    end
+    object TbReceitaid_moeda: TIntegerField
+      FieldName = 'id_moeda'
+      Origin = 'id_moeda'
+    end
+    object TbReceitadescricao: TStringField
+      FieldName = 'descricao'
+      Origin = 'descricao'
+      Size = 255
+    end
+    object TbReceitavalor: TBCDField
+      FieldName = 'valor'
+      Origin = 'valor'
+      Required = True
+      Precision = 10
+      Size = 2
+      EditMask = '#,##0.00;-,##0.00;_'
+    end
+    object TbReceitadata_receita: TDateField
+      FieldName = 'data_receita'
+      Origin = 'data_receita'
+      Required = True
+      EditMask = '!99/99/0000;1;_'
+    end
+    object TbReceitadata_criacao: TDateTimeField
+      FieldName = 'data_criacao'
+      Origin = 'data_criacao'
+    end
+    object TbReceitadata_atualizacao: TDateTimeField
+      FieldName = 'data_atualizacao'
+      Origin = 'data_atualizacao'
+    end
   end
   object DataSource7: TDataSource
     Left = 216

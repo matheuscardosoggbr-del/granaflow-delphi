@@ -41,7 +41,6 @@ object FormReceitas: TFormReceitas
     Width = 120
     DataField = 'valor'
     DataSource = DMDB.DsReceita
-    EditMask = '#,##0.00;-,##0.00;_'
     TabOrder = 1
   end
   object FData: TDBEdit
@@ -50,7 +49,6 @@ object FormReceitas: TFormReceitas
     Width = 120
     DataField = 'data_receita'
     DataSource = DMDB.DsReceita
-    EditMask = '!99/99/0000;1;_'
     TabOrder = 2
   end
   object BNova: TButton

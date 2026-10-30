@@ -43,6 +43,17 @@ type
     TbUsuariosid_moeda: TIntegerField;
     TbUsuariosdata_criacao: TDateTimeField;
     TbUsuariosdata_atualizacao: TDateTimeField;
+    TbReceitaid_receita: TFDAutoIncField;
+    TbReceitaid_usuario: TIntegerField;
+    TbReceitaid_moeda: TIntegerField;
+    TbReceitadescricao: TStringField;
+    TbReceitavalor: TBCDField;
+    TbReceitadata_receita: TDateField;
+    TbReceitadata_criacao: TDateTimeField;
+    TbReceitadata_atualizacao: TDateTimeField;
+    TbSalarioid: TFDAutoIncField;
+    TbSalarioid_usuario: TIntegerField;
+    TbSalariovalor: TBCDField;
     Qusuarios: TFDQuery;
   private
     { Private declarations }
