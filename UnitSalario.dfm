@@ -1,5 +1,5 @@
 object FormSalario: TFormSalario
-  Caption = 'GranaFlow - Salário'
+  Caption = 'GranaFlow - Sal'#225'rio'
   ClientHeight = 230
   ClientWidth = 420
   Position = poScreenCenter
@@ -7,7 +7,7 @@ object FormSalario: TFormSalario
   object Titulo: TLabel
     Left = 24
     Top = 20
-    Caption = 'Meu salário mensal'
+    Caption = 'Meu sal'#225'rio mensal'
     Font.Style = [fsBold]
     Font.Size = 18
     ParentFont = False
@@ -15,7 +15,7 @@ object FormSalario: TFormSalario
   object LValor: TLabel
     Left = 24
     Top = 75
-    Caption = 'Valor do salário'
+    Caption = 'Valor do sal'#225'rio'
   end
   object EValor: TEdit
     Left = 24
@@ -27,7 +27,7 @@ object FormSalario: TFormSalario
     Left = 24
     Top = 145
     Width = 250
-    Caption = 'Salvar salário'
+    Caption = 'Salvar sal'#225'rio'
     OnClick = SalvarSalario
     TabOrder = 1
   end

@@ -15,7 +15,7 @@ object FormGuardado: TFormGuardado
   object LDescricao: TLabel
     Left = 16
     Top = 58
-    Caption = 'Descrição'
+    Caption = 'Descri'#231#227'o'
   end
   object LValor: TLabel
     Left = 332

@@ -23,8 +23,8 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDMDB, DMDB);
-  Application.CreateForm(TPrincipal, Principal);
   Application.CreateForm(TLogin, Login);
+  Application.CreateForm(TPrincipal, Principal);
 
   { O usuário deve começar pela tela de login. }
   Principal.Hide;

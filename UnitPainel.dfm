@@ -28,7 +28,7 @@ object FormPainel: TFormPainel
   object LSalario: TLabel
     Left = 210
     Top = 90
-    Caption = 'Salário mensal'
+    Caption = 'Sal'#225'rio mensal'
   end
   object LTotalSalario: TLabel
     Left = 210

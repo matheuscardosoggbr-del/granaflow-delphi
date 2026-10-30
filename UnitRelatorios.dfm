@@ -1,5 +1,5 @@
 object FormRelatorios: TFormRelatorios
-  Caption = 'GranaFlow - Relatórios'
+  Caption = 'GranaFlow - Relat'#243'rios'
   ClientHeight = 420
   ClientWidth = 600
   Position = poScreenCenter
@@ -7,7 +7,7 @@ object FormRelatorios: TFormRelatorios
   object Titulo: TLabel
     Left = 16
     Top = 16
-    Caption = 'Relatório financeiro'
+    Caption = 'Relat'#243'rio financeiro'
     Font.Style = [fsBold]
     Font.Size = 18
     ParentFont = False

@@ -15,7 +15,7 @@ object FormRecorrentes: TFormRecorrentes
   object LDescricao: TLabel
     Left = 16
     Top = 58
-    Caption = 'Descrição'
+    Caption = 'Descri'#231#227'o'
   end
   object LValor: TLabel
     Left = 292

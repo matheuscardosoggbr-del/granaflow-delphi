@@ -15,7 +15,7 @@ object FormMetas: TFormMetas
   object LDescricao: TLabel
     Left = 16
     Top = 58
-    Caption = 'Descrição'
+    Caption = 'Descri'#231#227'o'
   end
   object LValor: TLabel
     Left = 292
@@ -25,7 +25,7 @@ object FormMetas: TFormMetas
   object LGuardado: TLabel
     Left = 428
     Top = 58
-    Caption = 'Já guardado'
+    Caption = 'J'#225' guardado'
   end
   object LData: TLabel
     Left = 564
