@@ -108,9 +108,9 @@ object Principal: TPrincipal
     end
     object Panel2: TPanel
       Left = 0
-      Top = 371
+      Top = 132
       Width = 200
-      Height = 121
+      Height = 360
       Align = alBottom
       Color = 16377574
       ParentBackground = False
