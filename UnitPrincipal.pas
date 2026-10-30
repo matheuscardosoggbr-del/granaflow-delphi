@@ -150,6 +150,19 @@ end;
 
 procedure TPrincipal.SairDoSistema(Sender: TObject);
 begin
+  if Assigned(FormGastos) then
+    FreeAndNil(FormGastos);
+  if Assigned(FormReceitas) then
+    FreeAndNil(FormReceitas);
+  if Assigned(FormCategorias) then
+    FreeAndNil(FormCategorias);
+  if Assigned(FormMetas) then
+    FreeAndNil(FormMetas);
+  if Assigned(FormPainel) then
+    FreeAndNil(FormPainel);
+  if Assigned(FormRelatorios) then
+    FreeAndNil(FormRelatorios);
+
   UsuarioLogadoId := 0;
   Hide;
   Login.EEmail.Clear;
