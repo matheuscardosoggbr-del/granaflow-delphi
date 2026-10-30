@@ -5,7 +5,7 @@ uses
   UnitDMDB in 'UnitDMDB.pas' {DMDB: TDataModule},
   UnitPrincipal in 'UnitPrincipal.pas' {Principal},
   UnitLogin in 'UnitLogin.pas' {Login},
-  UnitGastos in 'UnitGastos.pas',
+  UnitGastos in 'UnitGastos.pas' {FormGastos},
   UnitReceitas in 'UnitReceitas.pas',
   UnitPainel in 'UnitPainel.pas',
   UnitCategorias in 'UnitCategorias.pas',
