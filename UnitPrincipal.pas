@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXPanels, Vcl.ExtCtrls,
   Vcl.WinXCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Imaging.pngimage,
   UnitGastos, UnitReceitas, UnitPainel, UnitCategorias, UnitMetas, UnitRelatorios,
-  UnitSalario;
+  UnitSalario, UnitRecorrentes;
 
 type
   TPrincipal = class(TForm)
@@ -32,6 +32,7 @@ type
     BtnRelatorios: TButton;
     BtnSair: TButton;
     BtnSalario: TButton;
+    BtnRecorrentes: TButton;
     procedure AbrirGastos(Sender: TObject);
     procedure AbrirReceitas(Sender: TObject);
     procedure AbrirPainel(Sender: TObject);
@@ -40,6 +41,7 @@ type
     procedure AbrirRelatorios(Sender: TObject);
     procedure SairDoSistema(Sender: TObject);
     procedure AbrirSalario(Sender: TObject);
+    procedure AbrirRecorrentes(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -114,6 +116,13 @@ begin
   BtnSalario.Height := 38;
   BtnSalario.Caption := 'Salário';
   BtnSalario.OnClick := AbrirSalario;
+
+  BtnRecorrentes := TButton.Create(Self);
+  BtnRecorrentes.Parent := Panel2;
+  BtnRecorrentes.Align := alTop;
+  BtnRecorrentes.Height := 38;
+  BtnRecorrentes.Caption := 'Gastos recorrentes';
+  BtnRecorrentes.OnClick := AbrirRecorrentes;
 end;
 
 procedure TPrincipal.AbrirGastos(Sender: TObject);
@@ -174,6 +183,8 @@ begin
     FreeAndNil(FormRelatorios);
   if Assigned(FormSalario) then
     FreeAndNil(FormSalario);
+  if Assigned(FormRecorrentes) then
+    FreeAndNil(FormRecorrentes);
 
   UsuarioLogadoId := 0;
   Hide;
@@ -187,6 +198,13 @@ begin
   if not Assigned(FormSalario) then
     FormSalario := TFormSalario.Create(Application);
   FormSalario.Show;
+end;
+
+procedure TPrincipal.AbrirRecorrentes(Sender: TObject);
+begin
+  if not Assigned(FormRecorrentes) then
+    FormRecorrentes := TFormRecorrentes.Create(Application);
+  FormRecorrentes.Show;
 end;
 
 end.
