@@ -7,7 +7,8 @@ uses
   UnitLogin in 'UnitLogin.pas' {Login},
   UnitGastos in 'UnitGastos.pas' {FormGastos},
   UnitReceitas in 'UnitReceitas.pas' {FormReceitas},
-  UnitPainel in 'UnitPainel.pas' {FormPainel};
+  UnitPainel in 'UnitPainel.pas' {FormPainel},
+  UnitCategorias in 'UnitCategorias.pas' {FormCategorias};
 
 
 {$R *.res}
