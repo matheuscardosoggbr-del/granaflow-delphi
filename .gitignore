@@ -1,0 +1,31 @@
+# Delphi/RAD Studio generated files
+*.dcu
+*.exe
+*.dll
+*.map
+*.tvsconfig
+*.identcache
+*.local
+__history/
+Win32/Debug/
+Win32/Release/
+Win64/Debug/
+Win64/Release/
+Debug/
+Release/
+
+# User-specific IDE settings
+*.dsk
+*.stat
+*.tvsproj
+
+# Packages and generated resources
+*.hpp
+*.lib
+*.res
+*.rsm
+*.tds
+
+# OS files
+Thumbs.db
+Desktop.ini
