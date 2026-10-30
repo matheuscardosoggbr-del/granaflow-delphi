@@ -140,7 +140,7 @@ object Principal: TPrincipal
         Width = 200
         Height = 38
         Align = alTop
-        Caption = 'Salário'
+        Caption = 'Sal'#225'rio'
         TabOrder = 2
         OnClick = AbrirSalario
       end
@@ -150,7 +150,7 @@ object Principal: TPrincipal
         Width = 200
         Height = 38
         Align = alTop
-        Caption = 'Relatórios'
+        Caption = 'Relat'#243'rios'
         TabOrder = 3
         OnClick = AbrirRelatorios
       end
@@ -277,6 +277,33 @@ object Principal: TPrincipal
       Caption = 'CardRelatorios'
       CardIndex = 5
       TabOrder = 5
+    end
+    object CardSalario: TCard
+      Left = 1
+      Top = 1
+      Width = 466
+      Height = 490
+      Caption = 'CardSalario'
+      CardIndex = 6
+      TabOrder = 6
+    end
+    object CardRecorrentes: TCard
+      Left = 1
+      Top = 1
+      Width = 466
+      Height = 490
+      Caption = 'CardRecorrentes'
+      CardIndex = 7
+      TabOrder = 7
+    end
+    object CardGuardado: TCard
+      Left = 1
+      Top = 1
+      Width = 466
+      Height = 490
+      Caption = 'CardGuardado'
+      CardIndex = 8
+      TabOrder = 8
     end
   end
 end

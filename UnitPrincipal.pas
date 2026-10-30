@@ -19,6 +19,9 @@ type
     CardMetas: TCard;
     CardCategorias: TCard;
     CardRelatorios: TCard;
+    CardSalario: TCard;
+    CardRecorrentes: TCard;
+    CardGuardado: TCard;
     Panel1: TPanel;
     Panel2: TPanel;
     DBEpesquisa: TDBEdit;
@@ -44,6 +47,8 @@ type
     procedure AbrirSalario(Sender: TObject);
     procedure AbrirRecorrentes(Sender: TObject);
     procedure AbrirGuardado(Sender: TObject);
+  private
+    procedure MostrarTela(Tela: TForm; Cartao: TCard);
   end;
 
 var
@@ -56,40 +61,49 @@ implementation
 uses
   UnitLogin, UnitDMDB;
 
+procedure TPrincipal.MostrarTela(Tela: TForm; Cartao: TCard);
+begin
+  Tela.Parent := Cartao;
+  Tela.Align := alClient;
+  Tela.BorderStyle := bsNone;
+  Tela.Show;
+  CardPanel1.ActiveCard := Cartao;
+end;
+
 procedure TPrincipal.AbrirGastos(Sender: TObject);
 begin
   if not Assigned(FormGastos) then FormGastos := TFormGastos.Create(Application);
-  FormGastos.Show;
+  MostrarTela(FormGastos, CardGastos);
 end;
 
 procedure TPrincipal.AbrirReceitas(Sender: TObject);
 begin
   if not Assigned(FormReceitas) then FormReceitas := TFormReceitas.Create(Application);
-  FormReceitas.Show;
+  MostrarTela(FormReceitas, CardReceitas);
 end;
 
 procedure TPrincipal.AbrirPainel(Sender: TObject);
 begin
   if not Assigned(FormPainel) then FormPainel := TFormPainel.Create(Application);
-  FormPainel.Show;
+  MostrarTela(FormPainel, CardPainel);
 end;
 
 procedure TPrincipal.AbrirCategorias(Sender: TObject);
 begin
   if not Assigned(FormCategorias) then FormCategorias := TFormCategorias.Create(Application);
-  FormCategorias.Show;
+  MostrarTela(FormCategorias, CardCategorias);
 end;
 
 procedure TPrincipal.AbrirMetas(Sender: TObject);
 begin
   if not Assigned(FormMetas) then FormMetas := TFormMetas.Create(Application);
-  FormMetas.Show;
+  MostrarTela(FormMetas, CardMetas);
 end;
 
 procedure TPrincipal.AbrirRelatorios(Sender: TObject);
 begin
   if not Assigned(FormRelatorios) then FormRelatorios := TFormRelatorios.Create(Application);
-  FormRelatorios.Show;
+  MostrarTela(FormRelatorios, CardRelatorios);
 end;
 
 procedure TPrincipal.SairDoSistema(Sender: TObject);
@@ -113,19 +127,19 @@ end;
 procedure TPrincipal.AbrirSalario(Sender: TObject);
 begin
   if not Assigned(FormSalario) then FormSalario := TFormSalario.Create(Application);
-  FormSalario.Show;
+  MostrarTela(FormSalario, CardSalario);
 end;
 
 procedure TPrincipal.AbrirRecorrentes(Sender: TObject);
 begin
   if not Assigned(FormRecorrentes) then FormRecorrentes := TFormRecorrentes.Create(Application);
-  FormRecorrentes.Show;
+  MostrarTela(FormRecorrentes, CardRecorrentes);
 end;
 
 procedure TPrincipal.AbrirGuardado(Sender: TObject);
 begin
   if not Assigned(FormGuardado) then FormGuardado := TFormGuardado.Create(Application);
-  FormGuardado.Show;
+  MostrarTela(FormGuardado, CardGuardado);
 end;
 
 end.
