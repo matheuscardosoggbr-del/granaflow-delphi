@@ -34,6 +34,7 @@ object FormGuardado: TFormGuardado
     Top = 78
     Width = 140
     DataField = 'valor'
+    EditMask = '#,##0.00;-,##0.00;_'
     TabOrder = 1
   end
   object BNovo: TButton
@@ -74,5 +75,26 @@ object FormGuardado: TFormGuardado
     Height = 280
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 6
+    Columns = <
+      item
+        FieldName = 'id'
+        Title.Caption = 'C'#243'digo'
+      end
+      item
+        FieldName = 'id_usuario'
+        Title.Caption = 'Usu'#225'rio'
+      end
+      item
+        FieldName = 'descricao'
+        Title.Caption = 'Descri'#231#227'o'
+      end
+      item
+        FieldName = 'valor'
+        Title.Caption = 'Valor'
+      end
+      item
+        FieldName = 'data_registro'
+        Title.Caption = 'Data do registro'
+      end>
   end
 end

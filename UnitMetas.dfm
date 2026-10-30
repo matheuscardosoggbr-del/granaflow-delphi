@@ -44,6 +44,7 @@ object FormMetas: TFormMetas
     Top = 78
     Width = 120
     DataField = 'valor_limite'
+    EditMask = '#,##0.00;-,##0.00;_'
     TabOrder = 1
   end
   object FGuardado: TDBEdit
@@ -51,6 +52,7 @@ object FormMetas: TFormMetas
     Top = 78
     Width = 120
     DataField = 'valor_guardado'
+    EditMask = '#,##0.00;-,##0.00;_'
     TabOrder = 2
   end
   object FData: TDBEdit
@@ -58,6 +60,7 @@ object FormMetas: TFormMetas
     Top = 78
     Width = 120
     DataField = 'data_fim'
+    EditMask = '!99/99/0000;1;_'
     TabOrder = 3
   end
   object BNova: TButton
@@ -98,5 +101,30 @@ object FormMetas: TFormMetas
     Height = 300
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 8
+    Columns = <
+      item
+        FieldName = 'id_meta'
+        Title.Caption = 'C'#243'digo'
+      end
+      item
+        FieldName = 'id_usuario'
+        Title.Caption = 'Usu'#225'rio'
+      end
+      item
+        FieldName = 'nome_meta'
+        Title.Caption = 'Meta'
+      end
+      item
+        FieldName = 'valor_limite'
+        Title.Caption = 'Valor limite'
+      end
+      item
+        FieldName = 'valor_guardado'
+        Title.Caption = 'J'#225' guardado'
+      end
+      item
+        FieldName = 'data_fim'
+        Title.Caption = 'Data limite'
+      end>
   end
 end

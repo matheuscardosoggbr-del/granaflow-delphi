@@ -46,6 +46,7 @@ object FormGastos: TFormGastos
     Width = 120
     DataField = 'valor'
     DataSource = DMDB.DsGastos
+    EditMask = '#,##0.00;-,##0.00;_'
     TabOrder = 1
   end
   object FData: TDBEdit
@@ -54,6 +55,7 @@ object FormGastos: TFormGastos
     Width = 120
     DataField = 'data_gasto'
     DataSource = DMDB.DsGastos
+    EditMask = '!99/99/0000;1;_'
     TabOrder = 2
   end
   object FCategoria: TComboBox
@@ -103,5 +105,30 @@ object FormGastos: TFormGastos
     Anchors = [akLeft, akTop, akRight, akBottom]
     DataSource = DMDB.DsGastos
     TabOrder = 8
+    Columns = <
+      item
+        FieldName = 'id_gasto'
+        Title.Caption = 'C'#243'digo'
+      end
+      item
+        FieldName = 'id_usuario'
+        Title.Caption = 'Usu'#225'rio'
+      end
+      item
+        FieldName = 'id_categoria'
+        Title.Caption = 'Categoria'
+      end
+      item
+        FieldName = 'descricao'
+        Title.Caption = 'Descri'#231#227'o'
+      end
+      item
+        FieldName = 'valor'
+        Title.Caption = 'Valor'
+      end
+      item
+        FieldName = 'data_gasto'
+        Title.Caption = 'Data do gasto'
+      end>
   end
 end

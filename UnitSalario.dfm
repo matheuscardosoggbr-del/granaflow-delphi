@@ -17,10 +17,11 @@ object FormSalario: TFormSalario
     Top = 75
     Caption = 'Valor do sal'#225'rio'
   end
-  object EValor: TEdit
+  object EValor: TMaskEdit
     Left = 24
     Top = 98
     Width = 250
+    EditMask = '#,##0.00;-,##0.00;_'
     TabOrder = 0
   end
   object BSalvar: TButton

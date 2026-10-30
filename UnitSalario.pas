@@ -4,13 +4,13 @@ interface
 
 uses
   System.SysUtils, System.Classes, Vcl.Forms, Vcl.Controls, Vcl.StdCtrls,
-  Vcl.Dialogs, Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param, UnitDMDB;
+  Vcl.Dialogs, Data.DB, Vcl.Mask, FireDAC.Comp.Client, FireDAC.Stan.Param, UnitDMDB;
 
 type
   TFormSalario = class(TForm)
     Titulo: TLabel;
     LValor: TLabel;
-    EValor: TEdit;
+    EValor: TMaskEdit;
     BSalvar: TButton;
     procedure FormCreate(Sender: TObject);
     procedure SalvarSalario(Sender: TObject);

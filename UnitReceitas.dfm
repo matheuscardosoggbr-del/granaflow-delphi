@@ -41,6 +41,7 @@ object FormReceitas: TFormReceitas
     Width = 120
     DataField = 'valor'
     DataSource = DMDB.DsReceita
+    EditMask = '#,##0.00;-,##0.00;_'
     TabOrder = 1
   end
   object FData: TDBEdit
@@ -49,6 +50,7 @@ object FormReceitas: TFormReceitas
     Width = 120
     DataField = 'data_receita'
     DataSource = DMDB.DsReceita
+    EditMask = '!99/99/0000;1;_'
     TabOrder = 2
   end
   object BNova: TButton
@@ -91,5 +93,26 @@ object FormReceitas: TFormReceitas
     Anchors = [akLeft, akTop, akRight, akBottom]
     DataSource = DMDB.DsReceita
     TabOrder = 7
+    Columns = <
+      item
+        FieldName = 'id_receita'
+        Title.Caption = 'C'#243'digo'
+      end
+      item
+        FieldName = 'id_usuario'
+        Title.Caption = 'Usu'#225'rio'
+      end
+      item
+        FieldName = 'descricao'
+        Title.Caption = 'Descri'#231#227'o'
+      end
+      item
+        FieldName = 'valor'
+        Title.Caption = 'Valor'
+      end
+      item
+        FieldName = 'data_receita'
+        Title.Caption = 'Data da receita'
+      end>
   end
 end

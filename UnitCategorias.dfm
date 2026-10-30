@@ -62,5 +62,22 @@ object FormCategorias: TFormCategorias
     Height = 230
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 5
+    Columns = <
+      item
+        FieldName = 'id_categoria'
+        Title.Caption = 'C'#243'digo'
+      end
+      item
+        FieldName = 'id_usuario'
+        Title.Caption = 'Usu'#225'rio'
+      end
+      item
+        FieldName = 'nome'
+        Title.Caption = 'Nome'
+      end
+      item
+        FieldName = 'id_tipo'
+        Title.Caption = 'Tipo'
+      end>
   end
 end
