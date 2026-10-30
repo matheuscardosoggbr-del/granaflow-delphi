@@ -29,12 +29,14 @@ type
     BtnCategorias: TButton;
     BtnMetas: TButton;
     BtnRelatorios: TButton;
+    BtnSair: TButton;
     procedure AbrirGastos(Sender: TObject);
     procedure AbrirReceitas(Sender: TObject);
     procedure AbrirPainel(Sender: TObject);
     procedure AbrirCategorias(Sender: TObject);
     procedure AbrirMetas(Sender: TObject);
     procedure AbrirRelatorios(Sender: TObject);
+    procedure SairDoSistema(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -48,6 +50,9 @@ var
 implementation
 
 {$R *.dfm}
+
+uses
+  UnitLogin, UnitDMDB;
 
 procedure TPrincipal.FormCreate(Sender: TObject);
 begin
@@ -92,6 +97,13 @@ begin
   BtnRelatorios.Height := 38;
   BtnRelatorios.Caption := 'Relatórios';
   BtnRelatorios.OnClick := AbrirRelatorios;
+
+  BtnSair := TButton.Create(Self);
+  BtnSair.Parent := Panel2;
+  BtnSair.Align := alBottom;
+  BtnSair.Height := 38;
+  BtnSair.Caption := 'Sair';
+  BtnSair.OnClick := SairDoSistema;
 end;
 
 procedure TPrincipal.AbrirGastos(Sender: TObject);
@@ -134,6 +146,15 @@ begin
   if not Assigned(FormRelatorios) then
     FormRelatorios := TFormRelatorios.Create(Application);
   FormRelatorios.Show;
+end;
+
+procedure TPrincipal.SairDoSistema(Sender: TObject);
+begin
+  UsuarioLogadoId := 0;
+  Hide;
+  Login.EEmail.Clear;
+  Login.Esenha.Clear;
+  Login.Show;
 end;
 
 end.
