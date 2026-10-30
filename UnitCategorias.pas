@@ -107,6 +107,8 @@ end;
 procedure TFormCategorias.NovaCategoria(Sender: TObject);
 begin
   FCategorias.Append;
+  FCategorias.FieldByName('id_tipo').AsInteger := 2;
+  FCategorias.FieldByName('id_usuario').AsInteger := UsuarioLogadoId;
 end;
 
 procedure TFormCategorias.SalvarCategoria(Sender: TObject);

@@ -62,7 +62,7 @@ begin
   FDescricao.Parent := Self;
   FDescricao.SetBounds(16, 78, 260, 24);
   FDescricao.DataSource := FSource;
-  FDescricao.DataField := 'descricao';
+  FDescricao.DataField := 'nome_meta';
 
   LValor := TLabel.Create(Self);
   LValor.Parent := Self;
@@ -72,7 +72,7 @@ begin
   FValor.Parent := Self;
   FValor.SetBounds(292, 78, 120, 24);
   FValor.DataSource := FSource;
-  FValor.DataField := 'valor_meta';
+  FValor.DataField := 'valor_limite';
 
   LData := TLabel.Create(Self);
   LData.Parent := Self;
@@ -82,7 +82,7 @@ begin
   FData.Parent := Self;
   FData.SetBounds(428, 78, 120, 24);
   FData.DataSource := FSource;
-  FData.DataField := 'data_limite';
+  FData.DataField := 'data_fim';
 
   BNova := TButton.Create(Self);
   BNova.Parent := Self;
@@ -127,7 +127,8 @@ procedure TFormMetas.NovaMeta(Sender: TObject);
 begin
   FMetas.Append;
   FMetas.FieldByName('id_usuario').AsInteger := UsuarioLogadoId;
-  FMetas.FieldByName('data_limite').AsDateTime := Date;
+  FMetas.FieldByName('data_inicio').AsDateTime := Date;
+  FMetas.FieldByName('data_fim').AsDateTime := Date;
 end;
 
 procedure TFormMetas.SalvarMeta(Sender: TObject);
