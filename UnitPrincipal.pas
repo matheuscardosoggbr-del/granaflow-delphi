@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXPanels, Vcl.ExtCtrls,
   Vcl.WinXCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Imaging.pngimage,
-  UnitGastos, UnitReceitas, UnitPainel, UnitCategorias;
+  UnitGastos, UnitReceitas, UnitPainel, UnitCategorias, UnitMetas;
 
 type
   TPrincipal = class(TForm)
@@ -27,10 +27,12 @@ type
     BtnReceitas: TButton;
     BtnPainel: TButton;
     BtnCategorias: TButton;
+    BtnMetas: TButton;
     procedure AbrirGastos(Sender: TObject);
     procedure AbrirReceitas(Sender: TObject);
     procedure AbrirPainel(Sender: TObject);
     procedure AbrirCategorias(Sender: TObject);
+    procedure AbrirMetas(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -74,6 +76,13 @@ begin
   BtnCategorias.Height := 38;
   BtnCategorias.Caption := 'Categorias';
   BtnCategorias.OnClick := AbrirCategorias;
+
+  BtnMetas := TButton.Create(Self);
+  BtnMetas.Parent := Panel2;
+  BtnMetas.Align := alTop;
+  BtnMetas.Height := 38;
+  BtnMetas.Caption := 'Metas';
+  BtnMetas.OnClick := AbrirMetas;
 end;
 
 procedure TPrincipal.AbrirGastos(Sender: TObject);
@@ -102,6 +111,13 @@ begin
   if not Assigned(FormCategorias) then
     FormCategorias := TFormCategorias.Create(Application);
   FormCategorias.Show;
+end;
+
+procedure TPrincipal.AbrirMetas(Sender: TObject);
+begin
+  if not Assigned(FormMetas) then
+    FormMetas := TFormMetas.Create(Application);
+  FormMetas.Show;
 end;
 
 end.

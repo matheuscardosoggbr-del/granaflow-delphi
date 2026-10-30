@@ -8,7 +8,8 @@ uses
   UnitGastos in 'UnitGastos.pas' {FormGastos},
   UnitReceitas in 'UnitReceitas.pas' {FormReceitas},
   UnitPainel in 'UnitPainel.pas' {FormPainel},
-  UnitCategorias in 'UnitCategorias.pas' {FormCategorias};
+  UnitCategorias in 'UnitCategorias.pas' {FormCategorias},
+  UnitMetas in 'UnitMetas.pas' {FormMetas};
 
 
 {$R *.res}
