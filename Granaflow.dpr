@@ -10,7 +10,7 @@ uses
   UnitPainel in 'UnitPainel.pas' {FormPainel},
   UnitCategorias in 'UnitCategorias.pas' {FormCategorias},
   UnitMetas in 'UnitMetas.pas' {FormMetas},
-  UnitRelatorios in 'UnitRelatorios.pas',
+  UnitRelatorios in 'UnitRelatorios.pas' {FormRelatorios},
   UnitCadastro in 'UnitCadastro.pas',
   UnitSalario in 'UnitSalario.pas',
   UnitRecorrentes in 'UnitRecorrentes.pas',
