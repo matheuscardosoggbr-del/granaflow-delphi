@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXPanels, Vcl.ExtCtrls,
-  Vcl.WinXCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Imaging.pngimage;
+  Vcl.WinXCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Imaging.pngimage,
+  UnitGastos;
 
 type
   TPrincipal = class(TForm)
@@ -22,6 +23,9 @@ type
     DBEpesquisa: TDBEdit;
     LogoGranaflow: TLabel;
     ImgLogo: TImage;
+    BtnGastos: TButton;
+    procedure AbrirGastos(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,5 +38,22 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TPrincipal.FormCreate(Sender: TObject);
+begin
+  BtnGastos := TButton.Create(Self);
+  BtnGastos.Parent := Panel2;
+  BtnGastos.Align := alTop;
+  BtnGastos.Height := 38;
+  BtnGastos.Caption := 'Gastos';
+  BtnGastos.OnClick := AbrirGastos;
+end;
+
+procedure TPrincipal.AbrirGastos(Sender: TObject);
+begin
+  if not Assigned(FormGastos) then
+    FormGastos := TFormGastos.Create(Application);
+  FormGastos.Show;
+end;
 
 end.

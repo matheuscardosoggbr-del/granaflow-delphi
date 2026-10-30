@@ -4,7 +4,8 @@ uses
   Vcl.Forms,
   UnitDMDB in 'UnitDMDB.pas' {DMDB: TDataModule},
   UnitPrincipal in 'UnitPrincipal.pas' {Principal},
-  UnitLogin in 'UnitLogin.pas' {Login};
+  UnitLogin in 'UnitLogin.pas' {Login},
+  UnitGastos in 'UnitGastos.pas' {FormGastos};
 
 
 {$R *.res}
@@ -15,5 +16,10 @@ begin
   Application.CreateForm(TDMDB, DMDB);
   Application.CreateForm(TPrincipal, Principal);
   Application.CreateForm(TLogin, Login);
+
+  { O usuário deve começar pela tela de login. }
+  Principal.Hide;
+  Login.Show;
+
   Application.Run;
 end.

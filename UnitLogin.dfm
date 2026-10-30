@@ -208,6 +208,7 @@ object Login: TLogin
       Top = 176
       Width = 225
       Height = 24
+      PasswordChar = '*'
       TabOrder = 1
     end
     object Bentrar: TButton

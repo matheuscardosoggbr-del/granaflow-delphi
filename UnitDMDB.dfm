@@ -190,7 +190,7 @@ object DMDB: TDMDB
     MasterSource = DsUsuarios
     Connection = DB
     SQL.Strings = (
-      'SELECT email,senha FROM usuarios where email = :pEmail')
+      'SELECT id_usuario, email, senha FROM usuarios where email = :pEmail')
     Left = 216
     Top = 96
     ParamData = <

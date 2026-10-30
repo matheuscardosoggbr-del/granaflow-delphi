@@ -54,7 +54,10 @@ begin
       begin
         if DMDB.Qusuarios.FieldByName('senha').AsString = senha then
         begin
-        close;
+          UsuarioLogadoId := DMDB.Qusuarios.FieldByName('id_usuario').AsInteger;
+          { Esconde o login e mostra o sistema após a autenticação. }
+          Hide;
+          Principal.Show;
         end
         else
         begin

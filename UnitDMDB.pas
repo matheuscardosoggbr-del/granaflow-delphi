@@ -52,6 +52,7 @@ type
 
 var
   DMDB: TDMDB;
+  UsuarioLogadoId: Integer;
 
 implementation
 
