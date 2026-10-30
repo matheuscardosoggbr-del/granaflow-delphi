@@ -4,7 +4,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, Vcl.Forms, Vcl.Controls, Vcl.StdCtrls,
-  Vcl.Graphics, FireDAC.Comp.Client, UnitDMDB;
+  Vcl.Graphics, FireDAC.Comp.Client, FireDAC.Stan.Param, UnitDMDB;
 
 type
   TFormPainel = class(TForm)

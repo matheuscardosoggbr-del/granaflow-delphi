@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.Imaging.pngimage, UnitDMDB, UnitPrincipal;
+  Vcl.Imaging.pngimage, Data.DB, FireDAC.Stan.Param, UnitDMDB, UnitPrincipal;
 
 type
   TLogin = class(TForm)
