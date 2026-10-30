@@ -12,7 +12,7 @@ type
   private
     FMetas: TFDTable;
     FSource: TDataSource;
-    FDescricao, FValor, FData: TDBEdit;
+    FDescricao, FValor, FGuardado, FData: TDBEdit;
     procedure NovaMeta(Sender: TObject);
     procedure SalvarMeta(Sender: TObject);
     procedure ExcluirMeta(Sender: TObject);
@@ -28,14 +28,14 @@ implementation
 
 constructor TFormMetas.Create(AOwner: TComponent);
 var
-  Titulo, LDescricao, LValor, LData: TLabel;
+  Titulo, LDescricao, LValor, LGuardado, LData: TLabel;
   BNova, BSalvar, BExcluir: TButton;
   Grid: TDBGrid;
   Navigator: TDBNavigator;
 begin
   inherited Create(AOwner);
   Caption := 'GranaFlow - Metas';
-  Width := 850;
+  Width := 950;
   Height := 520;
   Position := poScreenCenter;
 
@@ -74,29 +74,39 @@ begin
   FValor.DataSource := FSource;
   FValor.DataField := 'valor_limite';
 
+  LGuardado := TLabel.Create(Self);
+  LGuardado.Parent := Self;
+  LGuardado.SetBounds(428, 58, 120, 20);
+  LGuardado.Caption := 'Ja guardado';
+  FGuardado := TDBEdit.Create(Self);
+  FGuardado.Parent := Self;
+  FGuardado.SetBounds(428, 78, 120, 24);
+  FGuardado.DataSource := FSource;
+  FGuardado.DataField := 'valor_guardado';
+
   LData := TLabel.Create(Self);
   LData.Parent := Self;
-  LData.SetBounds(428, 58, 120, 20);
+  LData.SetBounds(564, 58, 120, 20);
   LData.Caption := 'Data limite';
   FData := TDBEdit.Create(Self);
   FData.Parent := Self;
-  FData.SetBounds(428, 78, 120, 24);
+  FData.SetBounds(564, 78, 120, 24);
   FData.DataSource := FSource;
   FData.DataField := 'data_fim';
 
   BNova := TButton.Create(Self);
   BNova.Parent := Self;
-  BNova.SetBounds(565, 76, 80, 28);
+  BNova.SetBounds(650, 76, 80, 28);
   BNova.Caption := 'Nova';
   BNova.OnClick := NovaMeta;
   BSalvar := TButton.Create(Self);
   BSalvar.Parent := Self;
-  BSalvar.SetBounds(651, 76, 80, 28);
+  BSalvar.SetBounds(736, 76, 80, 28);
   BSalvar.Caption := 'Salvar';
   BSalvar.OnClick := SalvarMeta;
   BExcluir := TButton.Create(Self);
   BExcluir.Parent := Self;
-  BExcluir.SetBounds(737, 76, 80, 28);
+  BExcluir.SetBounds(822, 76, 80, 28);
   BExcluir.Caption := 'Excluir';
   BExcluir.OnClick := ExcluirMeta;
 
@@ -108,7 +118,7 @@ begin
 
   Grid := TDBGrid.Create(Self);
   Grid.Parent := Self;
-  Grid.SetBounds(16, 155, 801, 300);
+  Grid.SetBounds(16, 155, 900, 300);
   Grid.Anchors := [akLeft, akTop, akRight, akBottom];
   Grid.DataSource := FSource;
 
