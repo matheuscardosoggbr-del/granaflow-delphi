@@ -95,6 +95,10 @@ begin
   Grid.SetBounds(16, 165, 566, 230);
   Grid.Anchors := [akLeft, akTop, akRight, akBottom];
   Grid.DataSource := FCategoriasSource;
+
+  FCategorias.Filter := '(id_usuario IS NULL) OR (id_usuario = ' +
+    IntToStr(UsuarioLogadoId) + ')';
+  FCategorias.Filtered := UsuarioLogadoId > 0;
 end;
 
 destructor TFormCategorias.Destroy;
