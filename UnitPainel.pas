@@ -9,7 +9,7 @@ uses
 type
   TFormPainel = class(TForm)
   private
-    LTotalReceitas: TLabel;
+    LTotalReceitas, LTotalSalario: TLabel;
     LTotalGastos: TLabel;
     LSaldo: TLabel;
     function BuscarTotal(const NomeTabela: string): Currency;
@@ -25,12 +25,12 @@ implementation
 
 constructor TFormPainel.Create(AOwner: TComponent);
 var
-  Titulo, L1, L2, L3: TLabel;
+  Titulo, L1, L2, L3, L4: TLabel;
 begin
   inherited Create(AOwner);
 
   Caption := 'GranaFlow - Painel';
-  Width := 600;
+  Width := 760;
   Height := 350;
   Position := poScreenCenter;
 
@@ -53,27 +53,38 @@ begin
   LTotalReceitas.Font.Size := 18;
   LTotalReceitas.Font.Style := [fsBold];
 
+  L4 := TLabel.Create(Self);
+  L4.Parent := Self;
+  L4.SetBounds(210, 90, 180, 25);
+  L4.Caption := 'Salário mensal';
+  L4.Font.Size := 12;
+  LTotalSalario := TLabel.Create(Self);
+  LTotalSalario.Parent := Self;
+  LTotalSalario.SetBounds(210, 118, 180, 35);
+  LTotalSalario.Font.Size := 18;
+  LTotalSalario.Font.Style := [fsBold];
+
   L2 := TLabel.Create(Self);
   L2.Parent := Self;
-  L2.SetBounds(210, 90, 180, 25);
+  L2.SetBounds(396, 90, 180, 25);
   L2.Caption := 'Total de gastos';
   L2.Font.Size := 12;
 
   LTotalGastos := TLabel.Create(Self);
   LTotalGastos.Parent := Self;
-  LTotalGastos.SetBounds(210, 118, 180, 35);
+  LTotalGastos.SetBounds(396, 118, 180, 35);
   LTotalGastos.Font.Size := 18;
   LTotalGastos.Font.Style := [fsBold];
 
   L3 := TLabel.Create(Self);
   L3.Parent := Self;
-  L3.SetBounds(396, 90, 180, 25);
+  L3.SetBounds(582, 90, 180, 25);
   L3.Caption := 'Saldo';
   L3.Font.Size := 12;
 
   LSaldo := TLabel.Create(Self);
   LSaldo.Parent := Self;
-  LSaldo.SetBounds(396, 118, 180, 35);
+  LSaldo.SetBounds(582, 118, 180, 35);
   LSaldo.Font.Size := 18;
   LSaldo.Font.Style := [fsBold];
 
@@ -100,13 +111,15 @@ end;
 
 procedure TFormPainel.AtualizarValores;
 var
-  Receitas, Gastos: Currency;
+  Receitas, Salario, Gastos: Currency;
 begin
   Receitas := BuscarTotal('receitas');
+  Salario := BuscarTotal('salarios');
   Gastos := BuscarTotal('gastos');
   LTotalReceitas.Caption := FormatFloat('R$ #,##0.00', Receitas);
+  LTotalSalario.Caption := FormatFloat('R$ #,##0.00', Salario);
   LTotalGastos.Caption := FormatFloat('R$ #,##0.00', Gastos);
-  LSaldo.Caption := FormatFloat('R$ #,##0.00', Receitas - Gastos);
+  LSaldo.Caption := FormatFloat('R$ #,##0.00', Receitas + Salario - Gastos);
 end;
 
 end.

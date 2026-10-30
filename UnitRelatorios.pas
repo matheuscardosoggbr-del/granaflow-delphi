@@ -75,9 +75,10 @@ end;
 
 procedure TFormRelatorios.GerarRelatorio(Sender: TObject);
 var
-  Receitas, Gastos: Currency;
+  Receitas, Salario, Gastos: Currency;
 begin
   Receitas := TotalDaTabela('receitas');
+  Salario := TotalDaTabela('salarios');
   Gastos := TotalDaTabela('gastos');
   FTexto.Lines.Clear;
   FTexto.Lines.Add('RELATÓRIO FINANCEIRO');
@@ -86,8 +87,9 @@ begin
   FTexto.Lines.Add('Data: ' + DateToStr(Date));
   FTexto.Lines.Add('');
   FTexto.Lines.Add('Total de receitas: ' + FormatFloat('R$ #,##0.00', Receitas));
+  FTexto.Lines.Add('Salário mensal: ' + FormatFloat('R$ #,##0.00', Salario));
   FTexto.Lines.Add('Total de gastos: ' + FormatFloat('R$ #,##0.00', Gastos));
-  FTexto.Lines.Add('Saldo final: ' + FormatFloat('R$ #,##0.00', Receitas - Gastos));
+  FTexto.Lines.Add('Saldo final: ' + FormatFloat('R$ #,##0.00', Receitas + Salario - Gastos));
 end;
 
 end.
