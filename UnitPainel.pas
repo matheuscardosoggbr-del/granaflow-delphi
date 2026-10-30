@@ -12,6 +12,7 @@ type
     LTotalReceitas, LTotalSalario: TLabel;
     LTotalGastos: TLabel;
     LSaldo: TLabel;
+    procedure AtualizarClick(Sender: TObject);
     function BuscarTotal(const NomeTabela: string): Currency;
     procedure AtualizarValores;
   public
@@ -26,6 +27,7 @@ implementation
 constructor TFormPainel.Create(AOwner: TComponent);
 var
   Titulo, L1, L2, L3, L4: TLabel;
+  BAtualizar: TButton;
 begin
   inherited Create(AOwner);
 
@@ -88,6 +90,17 @@ begin
   LSaldo.Font.Size := 18;
   LSaldo.Font.Style := [fsBold];
 
+  BAtualizar := TButton.Create(Self);
+  BAtualizar.Parent := Self;
+  BAtualizar.SetBounds(24, 190, 180, 32);
+  BAtualizar.Caption := 'Atualizar valores';
+  BAtualizar.OnClick := AtualizarClick;
+
+  AtualizarValores;
+end;
+
+procedure TFormPainel.AtualizarClick(Sender: TObject);
+begin
   AtualizarValores;
 end;
 
