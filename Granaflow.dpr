@@ -12,7 +12,7 @@ uses
   UnitMetas in 'UnitMetas.pas' {FormMetas},
   UnitRelatorios in 'UnitRelatorios.pas' {FormRelatorios},
   UnitCadastro in 'UnitCadastro.pas',
-  UnitSalario in 'UnitSalario.pas',
+  UnitSalario in 'UnitSalario.pas' {FormSalario},
   UnitRecorrentes in 'UnitRecorrentes.pas',
   UnitGuardado in 'UnitGuardado.pas';
 
