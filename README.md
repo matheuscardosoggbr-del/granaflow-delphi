@@ -9,6 +9,8 @@ Sistema de controle financeiro desenvolvido em Delphi VCL com FireDAC e MySQL.
 - Cadastro, edição, exclusão e listagem de receitas;
 - Cadastro de categorias;
 - Cadastro de metas;
+- Cadastro de gastos recorrentes;
+- Controle de dinheiro guardado;
 - Painel com receitas, gastos e saldo;
 - Relatório financeiro resumido;
 - Encerramento da sessão do usuário.
@@ -34,6 +36,9 @@ Sistema de controle financeiro desenvolvido em Delphi VCL com FireDAC e MySQL.
 - `UnitMetas`: controle de metas.
 - `UnitPainel`: resumo financeiro.
 - `UnitRelatorios`: relatório resumido.
+- `UnitSalario`: cadastro do salário mensal.
+- `UnitRecorrentes`: contas recorrentes do usuário.
+- `UnitGuardado`: valores reservados pelo usuário.
 
 ## Conceitos usados
 
