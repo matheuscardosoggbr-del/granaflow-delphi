@@ -9,7 +9,7 @@ uses
   UnitReceitas in 'UnitReceitas.pas' {FormReceitas},
   UnitPainel in 'UnitPainel.pas' {FormPainel},
   UnitCategorias in 'UnitCategorias.pas' {FormCategorias},
-  UnitMetas in 'UnitMetas.pas',
+  UnitMetas in 'UnitMetas.pas' {FormMetas},
   UnitRelatorios in 'UnitRelatorios.pas',
   UnitCadastro in 'UnitCadastro.pas',
   UnitSalario in 'UnitSalario.pas',
