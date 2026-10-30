@@ -103,11 +103,13 @@ object DMDB: TDMDB
       Required = True
       Precision = 10
       Size = 2
+      EditMask = '#,##0.00;-,##0.00;_'
     end
     object TbGastosdata_gasto: TDateField
       FieldName = 'data_gasto'
       Origin = 'data_gasto'
       Required = True
+      EditMask = '!99/99/0000;1;_'
     end
     object TbGastosdata_criacao: TDateTimeField
       AutoGenerateValue = arDefault
