@@ -15,7 +15,6 @@ object Principal: TPrincipal
   WindowState = wsMaximized
   PixelsPerInch = 96
   TextHeight = 13
-  OnCreate = FormCreate
   object SVAsider: TSplitView
     Left = 0
     Top = 0
@@ -108,13 +107,113 @@ object Principal: TPrincipal
     end
     object Panel2: TPanel
       Left = 0
-      Top = 132
+      Top = 92
       Width = 200
-      Height = 360
+      Height = 400
       Align = alBottom
       Color = 16377574
       ParentBackground = False
       TabOrder = 1
+      object BtnGuardado: TButton
+        Left = 0
+        Top = 342
+        Width = 200
+        Height = 38
+        Align = alTop
+        Caption = 'Dinheiro guardado'
+        TabOrder = 0
+        OnClick = AbrirGuardado
+      end
+      object BtnRecorrentes: TButton
+        Left = 0
+        Top = 304
+        Width = 200
+        Height = 38
+        Align = alTop
+        Caption = 'Gastos recorrentes'
+        TabOrder = 1
+        OnClick = AbrirRecorrentes
+      end
+      object BtnSalario: TButton
+        Left = 0
+        Top = 266
+        Width = 200
+        Height = 38
+        Align = alTop
+        Caption = 'Salário'
+        TabOrder = 2
+        OnClick = AbrirSalario
+      end
+      object BtnRelatorios: TButton
+        Left = 0
+        Top = 228
+        Width = 200
+        Height = 38
+        Align = alTop
+        Caption = 'Relatórios'
+        TabOrder = 3
+        OnClick = AbrirRelatorios
+      end
+      object BtnMetas: TButton
+        Left = 0
+        Top = 190
+        Width = 200
+        Height = 38
+        Align = alTop
+        Caption = 'Metas'
+        TabOrder = 4
+        OnClick = AbrirMetas
+      end
+      object BtnCategorias: TButton
+        Left = 0
+        Top = 152
+        Width = 200
+        Height = 38
+        Align = alTop
+        Caption = 'Categorias'
+        TabOrder = 5
+        OnClick = AbrirCategorias
+      end
+      object BtnPainel: TButton
+        Left = 0
+        Top = 114
+        Width = 200
+        Height = 38
+        Align = alTop
+        Caption = 'Painel'
+        TabOrder = 6
+        OnClick = AbrirPainel
+      end
+      object BtnReceitas: TButton
+        Left = 0
+        Top = 76
+        Width = 200
+        Height = 38
+        Align = alTop
+        Caption = 'Receitas'
+        TabOrder = 7
+        OnClick = AbrirReceitas
+      end
+      object BtnGastos: TButton
+        Left = 0
+        Top = 38
+        Width = 200
+        Height = 38
+        Align = alTop
+        Caption = 'Gastos'
+        TabOrder = 8
+        OnClick = AbrirGastos
+      end
+      object BtnSair: TButton
+        Left = 0
+        Top = 362
+        Width = 200
+        Height = 38
+        Align = alBottom
+        Caption = 'Sair'
+        TabOrder = 9
+        OnClick = SairDoSistema
+      end
     end
   end
   object CardPanel1: TCardPanel
