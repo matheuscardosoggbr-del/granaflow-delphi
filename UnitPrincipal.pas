@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXPanels, Vcl.ExtCtrls,
   Vcl.WinXCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Imaging.pngimage,
-  UnitGastos, UnitReceitas, UnitPainel, UnitCategorias, UnitMetas, UnitRelatorios;
+  UnitGastos, UnitReceitas, UnitPainel, UnitCategorias, UnitMetas, UnitRelatorios,
+  UnitSalario;
 
 type
   TPrincipal = class(TForm)
@@ -30,6 +31,7 @@ type
     BtnMetas: TButton;
     BtnRelatorios: TButton;
     BtnSair: TButton;
+    BtnSalario: TButton;
     procedure AbrirGastos(Sender: TObject);
     procedure AbrirReceitas(Sender: TObject);
     procedure AbrirPainel(Sender: TObject);
@@ -37,6 +39,7 @@ type
     procedure AbrirMetas(Sender: TObject);
     procedure AbrirRelatorios(Sender: TObject);
     procedure SairDoSistema(Sender: TObject);
+    procedure AbrirSalario(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -104,6 +107,13 @@ begin
   BtnSair.Height := 38;
   BtnSair.Caption := 'Sair';
   BtnSair.OnClick := SairDoSistema;
+
+  BtnSalario := TButton.Create(Self);
+  BtnSalario.Parent := Panel2;
+  BtnSalario.Align := alTop;
+  BtnSalario.Height := 38;
+  BtnSalario.Caption := 'Salário';
+  BtnSalario.OnClick := AbrirSalario;
 end;
 
 procedure TPrincipal.AbrirGastos(Sender: TObject);
@@ -162,12 +172,21 @@ begin
     FreeAndNil(FormPainel);
   if Assigned(FormRelatorios) then
     FreeAndNil(FormRelatorios);
+  if Assigned(FormSalario) then
+    FreeAndNil(FormSalario);
 
   UsuarioLogadoId := 0;
   Hide;
   Login.EEmail.Clear;
   Login.Esenha.Clear;
   Login.Show;
+end;
+
+procedure TPrincipal.AbrirSalario(Sender: TObject);
+begin
+  if not Assigned(FormSalario) then
+    FormSalario := TFormSalario.Create(Application);
+  FormSalario.Show;
 end;
 
 end.

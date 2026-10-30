@@ -11,7 +11,8 @@ uses
   UnitCategorias in 'UnitCategorias.pas' {FormCategorias},
   UnitMetas in 'UnitMetas.pas' {FormMetas},
   UnitRelatorios in 'UnitRelatorios.pas' {FormRelatorios},
-  UnitCadastro in 'UnitCadastro.pas' {FormCadastro};
+  UnitCadastro in 'UnitCadastro.pas' {FormCadastro},
+  UnitSalario in 'UnitSalario.pas' {FormSalario};
 
 
 {$R *.res}
